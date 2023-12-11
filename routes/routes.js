@@ -20,7 +20,7 @@
         resolve: {
           categories: [
             "MenuDataService",
-            function (MenuDataService) {
+            (MenuDataService) => {
               return MenuDataService.getAllCategories();
             },
           ],
@@ -38,7 +38,7 @@
           items: [
             "$stateParams",
             "MenuDataService",
-            function ($stateParams, MenuDataService) {
+            ($stateParams, MenuDataService) => {
               return MenuDataService.getItemsForCategory(
                 $stateParams.categoryShortName
               );
